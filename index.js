@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 
 app.use("/", (req, res) => {
-  res.send("Hello World! Hello");
+  res.send("Hello World! Hello HELLO Hello");
 });
 
 app.post("/user", async (req, res) => {
