@@ -22,11 +22,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-app.use("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.post("/user", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const user = new User({
       name: req.body.name,
@@ -44,7 +40,7 @@ app.post("/user", async (req, res) => {
   }
 });
 
-app.get("/user", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const users = await User.find();
     res.status(200).send({
